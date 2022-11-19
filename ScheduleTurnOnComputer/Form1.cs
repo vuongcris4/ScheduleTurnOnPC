@@ -65,10 +65,10 @@ namespace ScheduleTurnOnComputer
             }
             String timeSchedule = cbTime.Text;
             string time = "@echo off\nstart \"\" wosb.exe /run /systray dt=\" " + dateSchedule.ToShortDateString() + "\" tm=\"" + timeSchedule + ":00" + "\"\ntimeout 3\n";
-            time += "powercfg -h off\nrundll32.exe powrprof.dll,SetSuspendState 0,1,0\npowercfg - h on";    // Sleep mode
+            time += "powercfg -h off\nrundll32.exe powrprof.dll,SetSuspendState 0,1,0\npowercfg -h on";    // Sleep mode
             File.WriteAllText("schedule.bat", time);
 
-            //System.Diagnostics.Process.Start("schedule.bat");
+            System.Diagnostics.Process.Start("schedule.bat");
         }
 
         private void btnTurnOff_Click(object sender, EventArgs e)
