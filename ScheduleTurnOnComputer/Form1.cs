@@ -69,6 +69,8 @@ namespace ScheduleTurnOnComputer
             File.WriteAllText("schedule.bat", time);
 
             System.Diagnostics.Process.Start("schedule.bat");
+            Application.Exit();
+
         }
 
         private void btnTurnOff_Click(object sender, EventArgs e)
