@@ -1,0 +1,10 @@
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\bin\Release\ScheduleTurnOnComputer.exe.config
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\bin\Release\ScheduleTurnOnComputer.exe
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\bin\Release\ScheduleTurnOnComputer.pdb
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\obj\Release\ScheduleTurnOnComputer.csproj.AssemblyReference.cache
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\obj\Release\ScheduleTurnOnComputer.Form1.resources
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\obj\Release\ScheduleTurnOnComputer.Properties.Resources.resources
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\obj\Release\ScheduleTurnOnComputer.csproj.GenerateResource.cache
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\obj\Release\ScheduleTurnOnComputer.csproj.CoreCompileInputs.cache
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\obj\Release\ScheduleTurnOnComputer.exe
+C:\Users\theth\source\repos\ScheduleTurnOnComputer\ScheduleTurnOnComputer\obj\Release\ScheduleTurnOnComputer.pdb

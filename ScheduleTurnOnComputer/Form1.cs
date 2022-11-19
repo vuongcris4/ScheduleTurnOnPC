@@ -24,13 +24,17 @@ namespace ScheduleTurnOnComputer
             t.Start();
 
             
-            cbTime.SelectedIndex = 19;
-            rbTomorrow.Checked = true;
 
             string timeNow = DateTime.Now.ToString("HH");
-            if (Int32.Parse(timeNow) >=0 && Int32.Parse(timeNow) <= 19)
+            if (Int32.Parse(timeNow) >=0 && Int32.Parse(timeNow) <= 17) // 0h -> 17h: Hen mo luc 19h
             {
                 rbToday.Checked = true;
+                cbTime.SelectedIndex = 19;
+            }
+            else // 17 -> 23: Hen mo luc 8h tomorrow
+            {
+                rbTomorrow.Checked = true;
+                cbTime.SelectedIndex = 8;
             }
         }
         
@@ -49,10 +53,13 @@ namespace ScheduleTurnOnComputer
             if (rbToday.Checked)
             {
                 dateSchedule = DateTime.Today.Date;
-                if (Int32.Parse(cbTime.Text) <= Int32.Parse(lbTime.Text))
+                if (!cbTime.Text.Contains(":"))
                 {
-                    MessageBox.Show("Time schedule is smaller than time now");
-                    return;
+                    if (Int32.Parse(cbTime.Text) <= Int32.Parse(lbTime.Text))
+                    {
+                        MessageBox.Show("Time schedule is smaller than time now");
+                        return;
+                    }
                 }
             }
             else if (rbTomorrow.Checked)
@@ -64,11 +71,25 @@ namespace ScheduleTurnOnComputer
                 dateSchedule = DateTime.Today.AddDays(2).Date;
             }
             String timeSchedule = cbTime.Text;
-            string time = "@echo off\nstart \"\" wosb.exe /run /systray dt=\" " + dateSchedule.ToShortDateString() + "\" tm=\"" + timeSchedule + ":00" + "\"\ntimeout 3\n";
-            time += "powercfg -h off\nrundll32.exe powrprof.dll,SetSuspendState 0,1,0\npowercfg -h on";    // Sleep mode
+            if (!timeSchedule.Contains(":"))
+            {
+                timeSchedule += ":00";
+            }
+            string time = "@echo off\nstart \"\" wosb.exe /run /systray dt=\" " + dateSchedule.ToShortDateString() + "\" tm=\"" + timeSchedule + "\"";
+            // time += "rundll32.exe powrprof.dll,SetSuspendState 0,1,0";    // Sleep mode
             File.WriteAllText("schedule.bat", time);
 
             System.Diagnostics.Process.Start("schedule.bat");
+
+            System.Threading.Thread.Sleep(2000);
+            // Hibernate
+            //Application.SetSuspendState(PowerState.Hibernate, true, true);
+            // Standby
+
+            // Windows + X   -> U -> S
+
+            System.Diagnostics.Process.Start("sleep.exe");
+
             Application.Exit();
 
         }
