@@ -44,7 +44,7 @@ namespace ScheduleTurnOnComputer
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void startSchedule()
@@ -88,7 +88,16 @@ namespace ScheduleTurnOnComputer
 
             // Windows + X   -> U -> S
 
-            System.Diagnostics.Process.Start("sleep.exe");
+            if (rbToday.Checked)
+            {
+                System.Diagnostics.Process.Start("sleep.exe");
+
+            }
+            else
+            {
+                System.Diagnostics.Process.Start("hibernate.exe");
+
+            }
 
             Application.Exit();
 
@@ -105,6 +114,35 @@ namespace ScheduleTurnOnComputer
             {
                 startSchedule();
             }
+        }
+
+        private void rbToday_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbToday.Checked)
+            {
+                cbTime.SelectedIndex = 19;
+            }
+            cbTime.SelectAll();
+        }
+
+        private void rbTomorrow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTomorrow.Checked)
+            {
+                cbTime.SelectedIndex = 8;
+            }
+            cbTime.SelectAll();
+
+        }
+
+        private void rb3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb3.Checked)
+            {
+                cbTime.SelectedIndex = 8;
+            }
+            cbTime.SelectAll();
+
         }
     }
 }

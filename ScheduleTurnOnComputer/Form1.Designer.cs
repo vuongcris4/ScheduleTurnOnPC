@@ -54,6 +54,7 @@ namespace ScheduleTurnOnComputer
             this.rbToday.TabIndex = 0;
             this.rbToday.Text = "Today";
             this.rbToday.UseVisualStyleBackColor = true;
+            this.rbToday.CheckedChanged += new System.EventHandler(this.rbToday_CheckedChanged);
             // 
             // rbTomorrow
             // 
@@ -64,6 +65,7 @@ namespace ScheduleTurnOnComputer
             this.rbTomorrow.TabIndex = 1;
             this.rbTomorrow.Text = "Tomorrow";
             this.rbTomorrow.UseVisualStyleBackColor = true;
+            this.rbTomorrow.CheckedChanged += new System.EventHandler(this.rbTomorrow_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -162,6 +164,7 @@ namespace ScheduleTurnOnComputer
             this.rb3.TabIndex = 3;
             this.rb3.Text = "Two days later";
             this.rb3.UseVisualStyleBackColor = true;
+            this.rb3.CheckedChanged += new System.EventHandler(this.rb3_CheckedChanged);
             // 
             // btnTurnOff
             // 
