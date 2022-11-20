@@ -122,7 +122,7 @@ namespace ScheduleTurnOnComputer
             {
                 cbTime.SelectedIndex = 19;
             }
-            cbTime.SelectAll();
+            cbTime.Focus();
         }
 
         private void rbTomorrow_CheckedChanged(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace ScheduleTurnOnComputer
             {
                 cbTime.SelectedIndex = 8;
             }
-            cbTime.SelectAll();
+            cbTime.Focus();
 
         }
 
@@ -141,7 +141,7 @@ namespace ScheduleTurnOnComputer
             {
                 cbTime.SelectedIndex = 8;
             }
-            cbTime.SelectAll();
+            cbTime.Focus();
 
         }
     }
